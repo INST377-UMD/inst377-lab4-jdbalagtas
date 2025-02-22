@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Lab 4 - Javascript</title>
+    <link rel="stylesheet" href="inst377_lab 4_balagtas.css">
+</head>
+
+<body>
+    <h1 id="page-heading">INST377 - Lab 4</h1>
+
+    <!--main text area-->
+    <div class="content-area">
+
+        <!--alert me section-->
+        <div class="content-box">
+            <form name="alertmeForm" onsubmit="return showAlert(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <button type="submit">Alert Me!</button>
+            </form>
+        </div>
+
+        <!--java script code for alert me section-->
+        <script>
+            function showAlert(event) {
+                event.preventDefault();
+                var nameInput = document.getElementById("name").value;
+                console.log("User name has been entered:", nameInput);
+
+                if (nameInput !== "") {
+                    alert("Hello " + nameInput + "!");
+                }
+            }
+        </script>
+
+        <!--text tester section-->
+        <div class="content-box">
+            <form name="texttestForm" onsubmit="return formValidation(event)">
+                <label for="texttest">Text Tester:</label>
+                <input type="text" id="texttest" required>
+                <button type="submit">Validate Text</button>
+            </form>
+        </div>
+
+        <!--java script code for text tester section-->
+        <script>
+            function formValidation(event) {
+                event.preventDefault();
+                var textInput = document.getElementById("texttest").value;
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                if (validation.test(textInput)) {
+                    console.log("Special character detected.");
+                    alert("Text is NOT valid.");
+                } else {
+                    console.log("No special characters detected.");
+                    alert("Text is valid.");
+                }
+            }
+        </script>
+    </div>
+
+    <!--side bar area-->
+    <div class="sidebar-area">
+
+        <!--change color section-->
+        <div class="content-box">
+            <button onclick="changeColor()">Change Color</button>
+        </div>
+
+        <!--java script code for color change section-->
+        <script>
+            function changeColor() {
+                if (document.body.style.backgroundColor === "lightskyblue" || document.body.style.backgroundColor === "") {
+                    document.body.style.backgroundColor = "lightgreen";
+                    console.log("Background color has been changed.");
+                } else {
+                    document.body.style.backgroundColor = "lightskyblue";
+                    console.log("Background color has been changed.");
+                }
+            }
+        </script>
+
+        <!--add text section-->
+        <div class="content-box">
+            <button onclick="addText()">Add Text</button>
+        </div>
+
+        <!--java script code for add text section-->
+        <script>
+            function addText() {
+                var heading = document.getElementById("page-heading");
+                heading.textContent += " | How ya doin?";
+                console.log("The page header has been modified.");
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+body {
+    background-color:lightskyblue;
+}
+
+.content-area {
+    width: 48%;
+    float: left;
+    margin: 0;
+}
+
+.sidebar-area {
+    width: 48%;
+    float: right;
+    margin: 0;
+}
+
+.content-box {
+    background-color:blueviolet;
+    color:white;
+    border:2px solid white;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    height: 5%;
+    margin: 10px;
+}
